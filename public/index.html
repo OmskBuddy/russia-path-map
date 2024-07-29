@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта логистики России</title>
+    
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./map.js"></script>
+</head>
+<body>
+    <div class="middle">        
+        <main>
+            <div class="map-container">
+                <div class="map-info">
+
+                </div>
+
+                <div class="map-svg-wrapper">
+                    <svg class="map-svg">
+                        <!-- <rect class="map-bg svg-full-size" x="0" y="0" filter="url(#noise-filter)"></rect> -->
+                        <image class="map-image svg-full-size" xlink:href=""/>
+                        <g class="map-svg-elements"></g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <p id="rangeValue" style="text-align: center;">Декабрь 2023 года</p>
+                    <input type="range" class="range" value="935" min="0" max="935" onmousemove="rangeSlider(this.value)" 
+                        onchange="rangeSlider(this.value)" style="width: 80%;">
+                </div>
+            </div>
+
+            <div class="info_bg">
+                <div class="info">
+                    <h2 class="info_title"></h2>
+                    <div class="info_description" style="white-space: pre-wrap;"></div>
+                </div>
+            </div>
+
+            <div class="tooltip"></div>
+
+        </main>
+    </div>
+
+    <script>Init({
+        container: ".map-container",
+        map: "./img/map.jpg",
+        svg: "./img/map-objects.svg",
+        date: [12, 2023]
+    });</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+}
+
+.map-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.map-svg-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.map-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.map-bg {
+    fill: #80a8e9;
+}
+
+.map-svg-elements {
+    stroke: black;
+    cursor: pointer;
+}
+
+.map-svg-elements .russia {
+    fill: #e3b900;
+}
+
+.map-svg-elements .russia:hover {
+    animation: highlightElement 3s linear infinite;
+    fill: #fed90a;
+}
+
+.map-svg-elements .other-countries {
+    fill: gray;
+}
+
+.map-svg-elements .other-countries:hover {
+    animation: highlightElement 3s linear infinite;
+    fill: #fed90a;
+}
+
+.map-svg-elements .city {
+    stroke: #fed90a;
+}
+
+.map-svg-elements .city:hover {
+    stroke: black;
+    fill: #fed90a;
+}
+
+.map-svg-elements .railway {
+    stroke: #e05d20;
+    stroke-linecap: round;
+    stroke-width: 0.15rem;
+    fill: none;
+}
+
+.map-svg-elements .railway:hover {
+    stroke: rgb(66, 213, 29);
+}
+
+.info_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s all;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.info_bg.active {
+    pointer-events: all;
+    opacity: 1;
+    transition: 0.3s all;
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    width: 500px;
+}
+ 
+.tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgva(0, 0, 0, 0.3);
+    display: none;
+}
+
